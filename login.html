@@ -33,6 +33,10 @@
     button:hover {
       background: #0056b3;
     }
+    .reset-link {
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -45,15 +49,16 @@
 
   <button id="loginBtn">Log In</button>
 
+  <p class="reset-link">
+    <a id="resetPasswordLink" href="#">Forgot your password?</a>
+  </p>
+
   <p>Don't have an account? <a href="signup.html">Sign up</a></p>
 </div>
 
 <script type="module" src="firebase.js"></script>
 <script type="module" src="firebase-auth.js"></script>
 
-</body>
-</html>
-<p><a id="resetPasswordLink" href="#">Forgot your password?</a></p>
 <script type="module">
   import { auth } from "./firebase.js";
   import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -76,3 +81,6 @@
     }
   });
 </script>
+
+</body>
+</html>
