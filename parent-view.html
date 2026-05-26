@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parent View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    .section {
+      background: #eef2ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .note {
+      background: #fff;
+      padding: 10px;
+      border-left: 4px solid #007bff;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Parent Dashboard</h2>
+  <p><strong>Viewing your child's progress and coach notes:</strong></p>
+
+  <div class="section">
+    <h3>Drill Progress</h3>
+    <ul id="progressList"></ul>
+  </div>
+
+  <div class="section">
+    <h3>Coach Notes</h3>
+    <div id="notesList"></div>
+  </div>
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="firebase-progress.js"></script>
+
+</body>
+</html>
