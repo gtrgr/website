@@ -74,7 +74,7 @@ if (signupBtn) {
 
       // Redirect based on role
       if (role === "player") window.location.href = "player-tracker.html";
-      if (role === "coach") window.location.href = "coach-dashboard.html";
+      if (role === "coach") window.location.href = "got-you.html";
       if (role === "parent") window.location.href = "parent-view.html";
 
     } catch (error) {
@@ -111,7 +111,7 @@ if (loginBtn) {
 
       // Redirect based on role
       if (data.role === "player") window.location.href = "player-tracker.html";
-      if (data.role === "coach") window.location.href = "coach-dashboard.html";
+      if (data.role === "coach") window.location.href = "got-you.html";
       if (data.role === "parent") window.location.href = "parent-view.html";
 
     } catch (error) {
