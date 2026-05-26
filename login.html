@@ -53,3 +53,26 @@
 
 </body>
 </html>
+<p><a id="resetPasswordLink" href="#">Forgot your password?</a></p>
+<script type="module">
+  import { auth } from "./firebase.js";
+  import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const resetLink = document.getElementById("resetPasswordLink");
+
+  resetLink.addEventListener("click", async () => {
+    const email = document.getElementById("loginEmail").value.trim();
+
+    if (!email) {
+      alert("Enter your email first so we know where to send the reset link.");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Password reset email sent! Check your inbox.");
+    } catch (error) {
+      alert(error.message);
+    }
+  });
+</script>
