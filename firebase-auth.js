@@ -74,7 +74,7 @@ if (signupBtn) {
 
       // Redirect based on role
       if (role === "player") window.location.href = "player-tracker.html";
-      if (role === "coach") import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";  onAuthStateChanged(auth, (user) => {   if (user) {     const lastReset = user.metadata.passwordUpdatedAt;     const now = Date.now();      // 5 minutes = 300000 ms     const justReset = now - lastReset < 300000;      if (justReset) {       window.location.href = "got-you.html";     } else {       window.location.href = "coach-dashboard.html";     }   } });
+      if (role === "coach") window.location.href = "coach-dashboard.html";
       if (role === "parent") window.location.href = "parent-view.html";
 
     } catch (error) {
@@ -111,7 +111,7 @@ if (loginBtn) {
 
       // Redirect based on role
       if (data.role === "player") window.location.href = "player-tracker.html";
-      if (data.role === "coach") import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";  onAuthStateChanged(auth, (user) => {   if (user) {     const lastReset = user.metadata.passwordUpdatedAt;     const now = Date.now();      // 5 minutes = 300000 ms     const justReset = now - lastReset < 300000;      if (justReset) {       window.location.href = "got-you.html";     } else {       window.location.href = "coach-dashboard.html";     }   } });
+      if (data.role === "coach") window.location.href = "coach-dashboard.html";
       if (data.role === "parent") window.location.href = "parent-view.html";
 
     } catch (error) {
