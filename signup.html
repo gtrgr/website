@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #parent-child-email {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Create Account</h2>
+
+  <input id="firstName" type="text" placeholder="First Name">
+  <input id="lastName" type="text" placeholder="Last Name">
+
+  <select id="role">
+    <option value="">Select Role</option>
+    <option value="player">Player</option>
+    <option value="coach">Coach</option>
+    <option value="parent">Parent</option>
+  </select>
+
+  <input id="parent-child-email" type="email" placeholder="Child's Email (Parents Only)">
+
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+
+  <button id="signupBtn">Sign Up</button>
+
+  <p>Already have an account? <a href="login.html">Log in</a></p>
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="firebase-auth.js"></script>
+
+<script>
+  // Show child email field only for parents
+  const roleSelect = document.getElementById("role");
+  const childEmailField = document.getElementById("parent-child-email");
+
+  roleSelect.addEventListener("change", () => {
+    childEmailField.style.display = roleSelect.value === "parent" ? "block" : "none";
+  });
+</script>
+
+</body>
+</html>
